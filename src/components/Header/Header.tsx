@@ -1,11 +1,10 @@
+'use client';
 import { useEffect, useState } from "react";
 import { Calendar, Clock, Menu } from "lucide-react";
 
-interface HeaderProps {
-  setIsOpen: (isOpen: boolean) => void;
-}
+interface HeaderProps {}
 
-export const Header: React.FC<HeaderProps> = ({ setIsOpen }) => {
+export const Header: React.FC<HeaderProps> = () => {
   const [currentTime, setCurrentTime] = useState<Date>(new Date());
 
   // Update the time every minute
@@ -39,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({ setIsOpen }) => {
         <div className="flex items-center">
           <button
             className="p-2 mr-2 lg:hidden"
-            onClick={() => setIsOpen(true)}
+            // onClick={() => setIsOpen(true)}
             aria-label="Open menu"
           >
             <Menu className="w-6 h-6" />
